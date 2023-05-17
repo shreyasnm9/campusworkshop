@@ -61,3 +61,10 @@ def homepage():
     return render_template("index.html", items=items)
 
 
+@app.route("/update", methods=['PUT'])
+def update():
+    """ recieves post requests to add new task """
+    data = request.get_json()
+    db_helper.update_task_entry(data['id'],data['Description'])
+    result = {'success': True, 'response': 'Done'}
+    return jsonify(result)

@@ -101,7 +101,7 @@
                     <td>{{item.task}}</td>
                     {% if item.status == "Todo" %}
                     <td><button type="button" class="btn btn-outline-primary btn-sm state"
-                            data-source="{{item.id}}">{{item.status}}</button></td>
+                            data-source="{{item.id}}" onclick="InProgress">{{item.status}}</button></td>
                     {%endif%}
                     {% if item.status == "In Progress" %}
                     <td><button type="button" class="btn btn-outline-success btn-sm state"
